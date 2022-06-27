@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block titulo %} Tienda {% endblock %}
+{% block contenido %}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Imagen de producto</th>
+                <th>Cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in producto %}
+                <tr>
+                    <td><img src="{{ p.imagen.url }}" ></td>
+                    <td>
+                        {% for c in p.cliente_set.all %}
+                            {{c.nombre}},
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

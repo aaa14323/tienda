@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block titulo %} Creditos de imagen {% endblock %}
+{% block contenido %}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>imagen</th>
+                <th>Creditos</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in producto %}
+                <tr>
+                    <td><img src="{{ p.imagen.url }}" ></td>
+                    <td>{{p.imagen}}</td>
+                </tr>
+            {% endfor %} 
+        </tbody>
+    </table>
+{% endblock %}

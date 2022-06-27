@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block titulo %} Tienda {% endblock %}
+{% block contenido %}
+    <table class="table table-hover">
+        <thead>
+            <a href="{% url 'tienda:producto-add' %}" class="btn btn-primary">Agregar Producto</a>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in producto %}
+                <tr>
+                    <td><img src="{{ p.imagen.url }}" ></td>
+                    <td>${{p.precio}}</td>
+                    <td>
+                        <a href="{% url 'tienda:updatep' p.id %}" class="btn btn-success"> Editar</a>
+                        <a href="{% url 'tienda:deletep' p.id %}" class="btn btn-danger"> Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %} 
+        </tbody>
+    </table>
+{% endblock %}

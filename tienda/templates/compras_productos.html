@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block titulo %} Tienda {% endblock %}
+{% block contenido %}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in producto %}
+                <tr>
+                    <td><img src="{{ p.imagen.url }}" ></td>
+                    <td>$ {{p.precio}}</td>
+                    <td>
+                        <a href="" class="btn btn-outline-success"> Añadir a carrito</a>
+                    </td>
+                </tr>
+            {% endfor %} 
+        </tbody>
+    </table>
+{% endblock %}

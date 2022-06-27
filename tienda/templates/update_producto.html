@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block titulo %} Agregar cliente {% endblock %}
+{% block contenido %}
+    <form method="POST">
+        {% csrf_token %}
+        <table class="table table-hover">
+            {{mformp}}
+        </table>
+        <button class="btn btn-success">Guardar</button>
+    </form>
+{% endblock %}
